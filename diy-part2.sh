@@ -13,6 +13,6 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 # Modify gost Version
-sed -i 's/2.11.2/3.1.12/' feeds/kenzo/gost/Makefile
+sed -i 's/2.11.2/3.0.0-beta.2/' feeds/kenzo/gost/Makefile
 sed -i '/^PKG_HASH/d' feeds/kenzo/gost/Makefile
 sed -i 's/ginuerzh/go-gost/' feeds/kenzo/gost/Makefile
