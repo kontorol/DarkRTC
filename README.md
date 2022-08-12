@@ -8,6 +8,11 @@
 
 A template for building OpenWrt with GitHub Actions
 
+## Config
+```
+rm -f .config.old && make defconfig && ./scripts/diffconfig.sh > seed.config && cat seed.config
+```
+
 ## Usage
 
 - Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
