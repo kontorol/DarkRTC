@@ -23,6 +23,9 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   DARK_PACKAGES: DarkRTC
+  LOGO: img/logo.svg
+  BG: img/bg1.jpg
+  BANNER: banner
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -65,7 +68,7 @@ jobs:
 
     - name: copy DarkRTC Packages
       run: |
-        [ -e $DARK_PACKAGES ] && cp -rf $DARK_PACKAGES openwrt/package/darkrtc
+        [ -e $DARK_PACKAGES ] && mv $DARK_PACKAGES openwrt/package/darkrtc
         
     - name: Load custom feeds
       run: |
@@ -76,6 +79,12 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
+      
+    - name: Copy BANNER/BG/LOGO
+      run: |
+        [ -e $BG ] && mv $BG openwrt/feeds/kenzo/luci-theme-argonne/htdocs/luci-static/argonne/img/bg1.jpg
+        [ -e $LOGO ] && mv $LOGO openwrt/feeds/kenzo/luci-theme-argonne/htdocs/luci-static/argonne/img/logo.svg   
+        [ -e $BANNER ] && mv $BANNER openwrt/package/base-files/files/etc/banner
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
