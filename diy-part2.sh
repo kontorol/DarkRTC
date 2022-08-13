@@ -34,7 +34,7 @@ sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/theme
 sed -i 's/OpenWrt/DarkRTC/g' package/base-files/files/bin/config_generate
 
 # Modify DISTRIB_DESCRIPTION
-#sed -i "s/DarkRTC /DarkRTC build $(TZ=UTC-8 date "+%Y.%m.%d") @ DarkRTC /g" package/darkrtc/default-settings/files/zzz-default-settings
+sed -i "s/DarkRTC /DarkRTC build $(TZ=UTC+4 date "+%Y.%m.%d") @DarkRTC /g" package/darkrtc/default-settings/files/zzz-default-settings
 
 # Modify DISTRIB_REVISION
 sed -i "s/R22.8.2/R10.10.1/g" package/darkrtc/default-settings/files/zzz-default-settings
@@ -53,12 +53,6 @@ sed -i "s/R22.8.2/R10.10.1/g" package/darkrtc/default-settings/files/zzz-default
 
 # remove package
 #rm -rf package/lean/luci-theme-argonne
-
-# Change argonne BG Image
-cp -rf ./bg1.jpg feeds/kenzo/luci-theme-argonne/htdocs/luci-static/argonne/img/bg1.jpg
-
-# Change argonne LOGO
-cp -rf ./logo.svg feeds/kenzo/luci-theme-argonne/htdocs/luci-static/argonne/img/argonne.svg
 
 # Add kernel build user
 #[ -z $(grep "CONFIG_KERNEL_BUILD_USER=" .config) ] &&
