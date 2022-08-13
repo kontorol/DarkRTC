@@ -19,28 +19,28 @@ sed -i 's/143174a9ba5b0b6251d1d9a52267220f97bec1319676618746c1a5d7a7a86d96/e404e
 sed -i 's/ginuerzh/go-gost/' feeds/kenzo/gost/Makefile
 
 # change default password
-#sed -i "/admin/V3ryL0ngP@ssw0rd/g" package/antirtc/default-settings/files/zzz-default-settings
+#sed -i "/admin/V3ryL0ngP@ssw0rd/g" package/darkrtc/default-settings/files/zzz-default-settings
 
 # remove default password
-#sed -i 's/^sed -i "s|root/#&/g' package/antirtc/default-settings/files/zzz-default-settings
+#sed -i 's/^sed -i "s|root/#&/g' package/darkrtc/default-settings/files/zzz-default-settings
 
 # Modify the default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argonne/g' ./feeds/luci/collections/luci/Makefile
 
 # Cancel bootstrap as default theme
-#sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
+sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 
 # Modify hostname
-sed -i 's/OpenWrt/AntiRTC/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/DarkRTC/g' package/base-files/files/bin/config_generate
 
 # Modify DISTRIB_DESCRIPTION
-#sed -i "s/AntiRTC /ANIRTC build $(TZ=UTC-8 date "+%Y.%m.%d") @ AntiRTC /g" package/antirtc/default-settings/files/zzz-default-settings
+#sed -i "s/DarkRTC /DarkRTC build $(TZ=UTC-8 date "+%Y.%m.%d") @ DarkRTC /g" package/darkrtc/default-settings/files/zzz-default-settings
 
 # Modify DISTRIB_REVISION
-sed -i "s/R22.8.2/R10.10.1/g" package/antirtc/default-settings/files/zzz-default-settings
+sed -i "s/R22.8.2/R10.10.1/g" package/darkrtc/default-settings/files/zzz-default-settings
 
 # Modify the default wifi name ssid to tymishop
-#sed -i 's/ssid=OpenWrt/ssid=tymishop/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#sed -i 's/ssid=OpenWrt/ssid=DarkRTC/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 #Enable MU-MIMO
 #sed -i 's/mu_beamformer=0/mu_beamformer=1/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
@@ -52,12 +52,12 @@ sed -i "s/R22.8.2/R10.10.1/g" package/antirtc/default-settings/files/zzz-default
 #sed -i 's/key=15581822425/key=gds.2021/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # remove package
-#rm -rf package/lean/luci-theme-argon
+#rm -rf package/lean/luci-theme-argonne
 
 # Add kernel build user
 #[ -z $(grep "CONFIG_KERNEL_BUILD_USER=" .config) ] &&
-#    echo 'CONFIG_KERNEL_BUILD_USER="ANTIRTC"' >>.config ||
-#    sed -i 's@\(CONFIG_KERNEL_BUILD_USER=\).*@\1$"ANTIRTC"@' .config
+#    echo 'CONFIG_KERNEL_BUILD_USER="DARKRTC"' >>.config ||
+#    sed -i 's@\(CONFIG_KERNEL_BUILD_USER=\).*@\1$"DARKRTC"@' .config
 
 # Add kernel build domain
 #[ -z $(grep "CONFIG_KERNEL_BUILD_DOMAIN=" .config) ] &&
