@@ -13,8 +13,6 @@
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
-# Copy Default DarkRTC Packages
-cp -rf ./DarkRTC/ openwrt/package/darkrtc
 
 # Add a feed source
 echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
