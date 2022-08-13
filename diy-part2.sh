@@ -54,6 +54,12 @@ sed -i "s/R22.8.2/R10.10.1/g" package/darkrtc/default-settings/files/zzz-default
 # remove package
 #rm -rf package/lean/luci-theme-argonne
 
+# Change argonne BG Image
+cp -rf ./bg1.jpg feeds/kenzo/luci-theme-argonne/htdocs/luci-static/argonne/img/bg1.jpg
+
+# Change argonne LOGO
+#cp -rf ./logo.svg feeds/kenzo/luci-theme-argonne/htdocs/luci-static/argonne/img/argonne.svg
+
 # Add kernel build user
 #[ -z $(grep "CONFIG_KERNEL_BUILD_USER=" .config) ] &&
 #    echo 'CONFIG_KERNEL_BUILD_USER="DARKRTC"' >>.config ||
