@@ -1,5 +1,5 @@
-**English** | [Full Readme](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
-
+[Full Readme](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
+[Other Source Video](https://www.youtube.com/watch?v=dqmRl87uo4A&t=2s)
 # Actions-OpenWrt
 
 [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
