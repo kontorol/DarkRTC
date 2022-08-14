@@ -44,6 +44,12 @@ sed -i "s/DarkRTC /DarkRTC build $(TZ=UTC+4 date "+%Y.%m.%d") @DarkRTC /g" packa
 # Modify DISTRIB_REVISION
 sed -i "s/R22.8.2/R10.10.1/g" package/darkrtc/default-settings/files/zzz-default-settings
 
+# Modify TZ
+sed -i "s/CST-8/UTC-7/g" package/darkrtc/default-settings/files/zzz-default-settings
+
+# Modify TZ
+#sed -i "s/Asia\/Shanghai/US\/California/g" package/darkrtc/default-settings/files/zzz-default-settings
+
 # Modify the default wifi name ssid to tymishop
 #sed -i 's/ssid=OpenWrt/ssid=DarkRTC/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
