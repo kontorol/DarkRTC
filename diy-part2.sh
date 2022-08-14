@@ -14,13 +14,13 @@
 sed -i 's/192.168.1.1/192.168.56.1/g' package/base-files/files/bin/config_generate
 
 # Modify gost Version
-sed -i 's/2.11.2/3.0.0-beta.2/' feeds/kenzo/gost/Makefile
-sed -i 's/143174a9ba5b0b6251d1d9a52267220f97bec1319676618746c1a5d7a7a86d96/e404ec04c2e04ca05cb9fd5d83412e304cfb4976ff2389c786bcfe9468e2958d/' feeds/kenzo/gost/Makefile
-sed -i 's/ginuerzh/go-gost/' feeds/kenzo/gost/Makefile
+#sed -i 's/2.11.2/3.0.0-beta.2/' feeds/kenzo/gost/Makefile
+#sed -i 's/143174a9ba5b0b6251d1d9a52267220f97bec1319676618746c1a5d7a7a86d96/e404ec04c2e04ca05cb9fd5d83412e304cfb4976ff2389c786bcfe9468e2958d/' feeds/kenzo/gost/Makefile
+#sed -i 's/ginuerzh/go-gost/' feeds/kenzo/gost/Makefile
 
 # Modify binutils Version
-sed -i 's/2.39/2.38/' package/devel/binutils/Makefile
-sed -i 's/645c25f563b8adc0a81dbd6a41cffbf4d37083a382e02d5d3df4f65c09516d00/e316477a914f567eccc34d5d29785b8b0f5a10208d36bbacedcc39048ecfe024/' package/devel/binutils/Makefile
+#sed -i 's/2.39/2.38/' package/devel/binutils/Makefile
+#sed -i 's/645c25f563b8adc0a81dbd6a41cffbf4d37083a382e02d5d3df4f65c09516d00/e316477a914f567eccc34d5d29785b8b0f5a10208d36bbacedcc39048ecfe024/' package/devel/binutils/Makefile
 
 
 # change default password
