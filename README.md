@@ -3,6 +3,30 @@
 [Remote Config Telegram(tmate/ngrok)](https://github.com/P3TERX/ssh2actions)
 
 [Other Source Video](https://www.youtube.com/watch?v=dqmRl87uo4A&t=2s)
+
+#### How do I install private modules?
+
+It's possible to install modules from private GitHub repositories without using
+your own proxy. You'll need to add a
+[personal access token](https://github.com/settings/tokens) as a secret
+environment variable, as well as configure
+[GOPRIVATE](https://go.dev/ref/mod#private-modules).
+
+```yaml
+- name: Configure git for private modules
+  env:
+    TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+  run: git config --global url."https://YOUR_GITHUB_USERNAME:${TOKEN}@github.com".insteadOf "https://github.com"
+```
+
+```yaml
+env:
+  GOPRIVATE: "*.company.com"
+jobs:
+  [...]
+```
+
+
 # Actions-OpenWrt
 
 [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
