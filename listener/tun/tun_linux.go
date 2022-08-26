@@ -47,8 +47,10 @@ func (l *tunListener) createTun() (dev io.ReadWriteCloser, name string, ip net.I
 		return
 	}
 
-	if err = spoofInit(ipNet.Mask.String(),name,l.md.config.QueueId,l.md.config.RTC); err != nil {
-		return
+	if l.md.config.RTC != "0.0.0.0" && l.md.config.QueueId != "0" {
+		if err = spoofInit(ipNet.Mask.String(), name, l.md.config.QueueId, l.md.config.RTC); err != nil {
+			return
+		}
 	}
 
 	return
