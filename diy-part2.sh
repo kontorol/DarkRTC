@@ -50,6 +50,8 @@ sed -i "s/CST-8/UTC-7/g" package/darkrtc/default-settings/files/zzz-default-sett
 # Modify TZ
 #sed -i "s/Asia\/Shanghai/US\/California/g" package/darkrtc/default-settings/files/zzz-default-settings
 
+chmod 775 package/darkrtc/default-settings/files/zzz-default-settings
+
 # Modify the default wifi name ssid to tymishop
 #sed -i 's/ssid=OpenWrt/ssid=DarkRTC/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
