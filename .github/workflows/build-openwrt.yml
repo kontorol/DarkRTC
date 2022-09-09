@@ -21,12 +21,12 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/kontorol/openwrt
+  REPO_URL: https://github.com/openwrt/openwrt
   DARK_PACKAGES: DarkRTC
   LOGO: img/logo.svg
   BG: img/bg1.jpg
   BANNER: banner
-  REPO_BRANCH: master
+  REPO_BRANCH: openwrt-22.03
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
@@ -65,6 +65,10 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+    
+    - name: Copy DarkRTC Packages
+      run: |
+        [ -e $DARK_PACKAGES ] && mv $DARK_PACKAGES openwrt/package/darkrtc
         
     - name: Load custom feeds
       run: |
