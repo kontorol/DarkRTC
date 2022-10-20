@@ -23,6 +23,7 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   DARK_PACKAGES: DarkRTC
+  GOST_PACKAGES: gost
   LOGO: img/logo.svg
   BG: img/bg1.jpg
   BANNER: banner
@@ -69,6 +70,10 @@ jobs:
     - name: Copy DarkRTC Packages
       run: |
         [ -e $DARK_PACKAGES ] && mv $DARK_PACKAGES openwrt/package/darkrtc
+        
+    - name: Copy Gost Packages
+      run: |
+        [ -e $GOST_PACKAGES ] && mv $GOST_PACKAGES openwrt/package/gost
         
     - name: Load custom feeds
       run: |
