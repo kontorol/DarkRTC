@@ -85,11 +85,6 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
       
-    - name: Copy BANNER/BG/LOGO
-      run: |
-        [ -e $BG ] && mv $BG openwrt/feeds/kenzo/luci-theme-argonne/htdocs/luci-static/argonne/img/bg1.jpg
-        [ -e $LOGO ] && mv $LOGO openwrt/feeds/kenzo/luci-theme-argonne/htdocs/luci-static/argonne/img/logo.svg
-
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
