@@ -15,4 +15,4 @@
 
 
 # Add a feed source
-echo 'src-git gost https://github.com/kontorol/wrt-repo' >>feeds.conf.default
+# echo 'src-git gost https://github.com/kontorol/wrt-repo' >>feeds.conf.default
