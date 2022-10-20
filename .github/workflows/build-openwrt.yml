@@ -75,6 +75,10 @@ jobs:
       run: |
         [ -e $GOST_PACKAGES ] && mv $GOST_PACKAGES openwrt/package/gost
         
+    - name: Copy BANNER/BG/LOGO
+      run: |
+        [ -e $BANNER ] && mv $BANNER openwrt/package/base-files/files/etc/banner
+        
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
