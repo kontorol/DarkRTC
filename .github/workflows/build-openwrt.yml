@@ -26,7 +26,7 @@ env:
   LOGO: img/logo.svg
   BG: img/bg1.jpg
   BANNER: banner
-  REPO_BRANCH: openwrt-22.03
+  REPO_BRANCH: v22.03.0
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
